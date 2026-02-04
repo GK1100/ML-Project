@@ -5,4 +5,5 @@ matplotlib
 scikit-learn
 catboost
 xgboost
+dill
 # -e . // Keep in comment when you install requirements we will do uncomment when we want to build it.
