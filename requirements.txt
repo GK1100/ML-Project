@@ -7,4 +7,5 @@ catboost
 xgboost
 dill
 Flask
+DVC
 # -e . // Keep in comment when you install requirements we will do uncomment when we want to build it.
