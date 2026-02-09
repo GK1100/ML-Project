@@ -1,5 +1,6 @@
 import sys
 from src.logger import logging
+import yaml
 
 def error_message_detail(error, error_detail: sys):
     _, _, exc_tb = error_detail.exc_info()
@@ -20,3 +21,12 @@ class CustomException(Exception):
     def __str__(self):
         return self.error_message
     
+
+
+def read_params(path="params.yaml"):
+    try:
+        with open(path, "r") as f:
+            return yaml.safe_load(f)
+
+    except Exception as e:
+        raise CustomException(e, sys)

@@ -1,6 +1,6 @@
 import os
 import sys
-
+import yaml
 import numpy as np 
 import pandas as pd
 import dill
@@ -61,3 +61,16 @@ def load_object(file_path):
 
     except Exception as e:
         raise CustomException(e, sys)
+    
+
+
+def read_params(path="params.yaml"):
+    try:
+        with open(path, "r") as f:
+            return yaml.safe_load(f)
+
+    except FileNotFoundError:
+        raise Exception(f"Parameter file not found at: {path}")
+
+    except yaml.YAMLError as e:
+        raise Exception(f"Error parsing YAML file: {e}")
