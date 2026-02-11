@@ -1,0 +1,22 @@
+stages:
+  training_pipeline:
+    cmd: python src/pipeline/training_pipeline.py
+    deps:
+      - src/components/data_ingestion.py
+      - src/components/data_transformation.py
+      - src/components/model_trainer.py
+      - data/raw/stud.csv
+    params:
+      - data.raw_data_path
+      - data.test_size
+      - data.random_state
+      - model.name
+      - model.iterations
+      - model.depth
+      - model.learning_rate
+      - training.eval_metric
+    outs:
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - artifacts/model.pkl
+      - artifacts/preprocessor.pkl
