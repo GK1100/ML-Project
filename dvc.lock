@@ -1,0 +1,48 @@
+schema: '2.0'
+stages:
+  training_pipeline:
+    cmd: python src/pipeline/training_pipeline.py
+    deps:
+    - path: data/raw/stud.csv
+      hash: md5
+      md5: 72e8feb9e6dd40e0cc9b4563bdece775
+      size: 72036
+    - path: src/components/data_ingestion.py
+      hash: md5
+      md5: 4be45d4c850b74f942f4658bc108fd6d
+      size: 2242
+    - path: src/components/data_transformation.py
+      hash: md5
+      md5: 6759f0eb9906ac7469e8e005c9090dd2
+      size: 3919
+    - path: src/components/model_trainer.py
+      hash: md5
+      md5: 5971a6b5391635388a32486eff792f35
+      size: 4457
+    params:
+      params.yaml:
+        data.random_state: 52
+        data.raw_data_path: data/raw/stud.csv
+        data.test_size: 0.2
+        model.depth: 10
+        model.iterations: 500
+        model.learning_rate: 0.05
+        model.name: catboost
+        training.eval_metric: accuracy
+    outs:
+    - path: artifacts/model.pkl
+      hash: md5
+      md5: 68f7dc10748ee7dce799cac634baa4ca
+      size: 708
+    - path: artifacts/preprocessor.pkl
+      hash: md5
+      md5: 012e672df535938dd0d07c3be9990c46
+      size: 3577
+    - path: data/processed/test.csv
+      hash: md5
+      md5: d2c3e6af79beac46e3f0be338f1ea458
+      size: 11553
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 61232583644b60f51645df687c4d6d27
+      size: 45588
