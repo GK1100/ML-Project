@@ -17,14 +17,14 @@ stages:
       size: 3919
     - path: src/components/model_trainer.py
       hash: md5
-      md5: 5971a6b5391635388a32486eff792f35
-      size: 4457
+      md5: cc7a73b4b391a0e8d76bcc6dcb9b8c27
+      size: 5076
     params:
       params.yaml:
-        data.random_state: 42
+        data.random_state: 62
         data.raw_data_path: data/raw/stud.csv
-        data.test_size: 0.2
-        model.depth: 6
+        data.test_size: 0.1
+        model.depth: 16
         model.iterations: 500
         model.learning_rate: 0.1
         model.name: catboost
@@ -32,17 +32,17 @@ stages:
     outs:
     - path: artifacts/model.pkl
       hash: md5
-      md5: 7fa5436040182bbb0b1f0b783ed3b300
-      size: 708
+      md5: 3a9c611890a32b25a0d5a1d299579cf8
+      size: 760
     - path: artifacts/preprocessor.pkl
       hash: md5
-      md5: 86fa2d7587a12a0e3d9d18e5dbaf04f0
+      md5: ca71127a41cfd14a1d6a7de699d6ef29
       size: 3577
     - path: data/processed/test.csv
       hash: md5
-      md5: 8297f961886d8c4c98cb3d8077cdf484
-      size: 11557
+      md5: 7238c4dc6cf103c66e5bf79384d45f0f
+      size: 5815
     - path: data/processed/train.csv
       hash: md5
-      md5: df5f3c37e6cbbb1e229c1e1541fe0b08
-      size: 45584
+      md5: 9096e186149ac36f1a7d560c2c8aa0a2
+      size: 51326

@@ -1,0 +1,28 @@
+artifact_path: file:E:/workspace/MLOPs/ML_Project1/mlruns/1/models/m-c4561f29e1804af1871114caaf1a1dfa/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.13.2
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBRegressor
+    model_format: ubj
+    xgb_version: 2.1.4
+is_signature_from_type_hint: false
+mlflow_version: 3.9.0
+model_id: m-c4561f29e1804af1871114caaf1a1dfa
+model_size_bytes: 258210
+model_uuid: m-c4561f29e1804af1871114caaf1a1dfa
+prompts: null
+run_id: c342d2aa6b62493d8708d9012a6b332c
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 19]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float32", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-02-12 22:44:35.345125'

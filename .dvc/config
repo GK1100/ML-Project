@@ -3,3 +3,5 @@
     autostage = true
 ['remote "local-storage"']
     url = ../dvc-storage-s3
+['remote "origin"']
+    url = https://dagshub.com/GK/ML-Project.mlflow
